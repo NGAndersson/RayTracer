@@ -179,20 +179,19 @@ public:
 
 	ID3D11Buffer* CreateConstantBuffer(UINT uSize, VOID* pInitData, char* debugName = nullptr);
 
-	ComputeBuffer* CreateBuffer(COMPUTE_BUFFER_TYPE uType, UINT uElementSize,
-		UINT uCount, bool bSRV, bool bUAV, VOID* pInitData, bool bCreateStaging = false, char* debugName = nullptr);
+	//ComputeBuffer* CreateBuffer(COMPUTE_BUFFER_TYPE uType, UINT uElementSize,
+	//	UINT uCount, bool bSRV, bool bUAV, VOID* pInitData, bool bCreateStaging = false, char* debugName = nullptr);
 
 	ComputeTexture* CreateTexture(DXGI_FORMAT dxFormat,	UINT uWidth,
 		UINT uHeight, UINT uRowPitch, VOID* pInitData, bool bCreateStaging = false, char* debugName = nullptr);
 
-	ComputeTexture* CreateTexture(TCHAR* textureFilename, char* debugName = nullptr);
 
 private:
-	ID3D11Buffer* CreateStructuredBuffer(UINT uElementSize, UINT uCount, bool bSRV, bool bUAV, VOID* pInitData);
-	ID3D11Buffer* CreateRawBuffer(UINT uSize, VOID* pInitData);
-	ID3D11ShaderResourceView* CreateBufferSRV(ID3D11Buffer* pBuffer);
-	ID3D11UnorderedAccessView* CreateBufferUAV(ID3D11Buffer* pBuffer);
-	ID3D11Buffer* CreateStagingBuffer(UINT uSize);
+	//ID3D11Buffer* CreateStructuredBuffer(UINT uElementSize, UINT uCount, bool bSRV, bool bUAV, VOID* pInitData);
+	//ID3D11Buffer* CreateRawBuffer(UINT uSize, VOID* pInitData);
+	//ID3D11ShaderResourceView* CreateBufferSRV(ID3D11Buffer* pBuffer);
+	//ID3D11UnorderedAccessView* CreateBufferUAV(ID3D11Buffer* pBuffer);
+	//ID3D11Buffer* CreateStagingBuffer(UINT uSize);
 
 	//texture functions
 	ID3D11Texture2D* CreateTextureResource(DXGI_FORMAT dxFormat,

@@ -182,9 +182,15 @@ HRESULT Render(float deltaTime)
 	ID3D11UnorderedAccessView* uav[] = { g_BackBufferUAV };
 	g_DeviceContext->CSSetUnorderedAccessViews(0, 1, uav, NULL);
 
+
 	g_ComputeShader->Set();
 	g_Timer->Start();
-	g_DeviceContext->Dispatch( 25, 25, 1 );
+
+	RECT rc;
+	GetClientRect(g_hWnd, &rc);
+
+	g_DeviceContext->Dispatch( floor((rc.right - rc.left)/32), floor((rc.bottom - rc.top) / 32), 1 );
+
 	g_Timer->Stop();
 	g_ComputeShader->Unset();
 
